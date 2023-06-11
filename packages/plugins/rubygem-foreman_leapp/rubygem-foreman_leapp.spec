@@ -5,10 +5,10 @@
 
 %global gem_name foreman_leapp
 %global plugin_name leapp
-%global foreman_min_version 3.2
+%global foreman_min_version 3.7
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 0.1.14
+Version: 1.0.0
 Release: 1%{?foremandist}%{?dist}
 Summary: A Foreman plugin for Leapp utility
 Group: Applications/Systems
@@ -34,6 +34,8 @@ BuildRequires: rubygem(foreman_ansible) >= 5.0
 BuildRequires: npm(@babel/core) >= 7.7.0
 BuildRequires: npm(@babel/core) < 8.0.0
 BuildRequires: npm(@theforeman/builder) >= 12.0.1
+BuildRequires: npm(@theforeman/stories) >= 10.0.0
+BuildRequires: npm(@theforeman/stories) < 11.0.0
 # end package.json devDependencies BuildRequires
 
 # start package.json dependencies BuildRequires
@@ -113,6 +115,9 @@ cp -pa .%{gem_dir}/* \
 %{foreman_plugin_log}
 
 %changelog
+* Sun Jun 11 2023 Foreman Packaging Automation <packaging@theforeman.org> 1.0.0-1
+- Update to 1.0.0
+
 * Wed May 10 2023 Foreman Packaging Automation <packaging@theforeman.org> 0.1.14-1
 - Update to 0.1.14
 
